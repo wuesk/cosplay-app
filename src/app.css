@@ -1,9 +1,0 @@
-/*@import 'tailwindcss';
-@import '@fontsource/fira-mono';*/
-
-body {
-	margin: 0;
-	background-attachment: fixed;
-	background-color: darkgrey;
-	font-family: Tahoma, sans-serif;
-}

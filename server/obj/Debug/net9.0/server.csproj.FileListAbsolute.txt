@@ -1,0 +1,15 @@
+D:\Dev\cosplan\server\bin\Debug\net9.0\server.exe
+D:\Dev\cosplan\server\bin\Debug\net9.0\server.deps.json
+D:\Dev\cosplan\server\bin\Debug\net9.0\server.runtimeconfig.json
+D:\Dev\cosplan\server\bin\Debug\net9.0\server.dll
+D:\Dev\cosplan\server\bin\Debug\net9.0\server.pdb
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.AssemblyInfoInputs.cache
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.AssemblyInfo.cs
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.csproj.CoreCompileInputs.cache
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.sourcelink.json
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.dll
+D:\Dev\cosplan\server\obj\Debug\net9.0\refint\server.dll
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.pdb
+D:\Dev\cosplan\server\obj\Debug\net9.0\server.genruntimeconfig.cache
+D:\Dev\cosplan\server\obj\Debug\net9.0\ref\server.dll
