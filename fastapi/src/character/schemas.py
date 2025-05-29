@@ -1,5 +1,5 @@
-from pydantic import BaseModel, EmailStr
-from typing import Optional, TYPE_CHECKING
+from pydantic import BaseModel, EmailStr, Field
+from typing import List, Optional, TYPE_CHECKING
 
 # Series
 class SeriesBase(BaseModel):
@@ -32,13 +32,35 @@ class Character(CharacterBase):
     
     model_config = {"from_attributes": True}
 
-#Shared
+# Character version
+class CharacterVersionBase(BaseModel):
+    name: str
+
+class CharacterVersionCreate(CharacterVersionBase):
+    pass
+
+class CharacterVersionUpdate(CharacterVersionBase):
+    pass
+
+class CharacterVersion(CharacterVersionBase):
+    id: int
+    character_id: int
+    character: Character
+
+    model_config = {"from_attributes": True}
+
+# Simple schemas for nested responses
 class SeriesSimple(BaseModel):
     name: str
 
-class CharacterWithSeries(BaseModel):
+class CharacterVersionSimple(BaseModel):
+    name: str
+
+# Comprehensive response schema
+class CharacterWhole(BaseModel):
     id: int
     name: str
     series: Optional[SeriesSimple] = None
+    character_version: List[CharacterVersionSimple] = Field(default_factory=list)
 
     model_config = {"from_attributes": True}
