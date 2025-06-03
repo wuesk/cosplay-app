@@ -1,6 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from ..core.models import Base  # Import shared Base
+from ..cosplay.models import cosplay_association
 
 class Cosplayer(Base):
     __tablename__ = 'cosplayer'
@@ -11,6 +12,12 @@ class Cosplayer(Base):
     # Relationships
     person_id = Column(Integer, ForeignKey('person.id'), unique=True)
     person = relationship("Person", back_populates="cosplayer")
+
+    character_versions = relationship(
+        "CharacterVersion",
+        secondary=cosplay_association,
+        back_populates="cosplayers"
+    )
 
 class Photographer(Base):
     __tablename__ = 'photographer'

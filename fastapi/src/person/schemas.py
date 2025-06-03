@@ -4,13 +4,13 @@ from typing import Optional, TYPE_CHECKING
 #Person
 class PersonBase(BaseModel):
     username: str
-    email: Optional[EmailStr] = None
     is_active: bool = True
     is_verified: bool = False
     is_superuser: bool = False
 
 class PersonCreate(PersonBase):
     password: str
+    email: EmailStr
 
 class PersonUpdate(BaseModel):
     username: Optional[str] = None

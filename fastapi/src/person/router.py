@@ -11,7 +11,18 @@ router = APIRouter(prefix="/persons", tags=["persons"])
 def create_person(person: schemas.PersonCreate, db: Session = Depends(get_db)):
     db_person = crud.get_person_by_username(db, username=person.username)
     if db_person:
-        raise HTTPException(status_code=400, detail="Username already registered")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, 
+            detail="Username already registered"
+        )
+    
+    if person.email:
+        db_person = crud.get_person_by_email(db, email=person.email)
+        if db_person:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Email already registered"
+            )
     return crud.create_person(db=db, person=person)
 
 @router.get("/", response_model=List[schemas.Person])

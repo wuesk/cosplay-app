@@ -45,7 +45,7 @@ class CharacterVersionUpdate(CharacterVersionBase):
 class CharacterVersion(CharacterVersionBase):
     id: int
     character_id: int
-    character: Character
+    character: Optional[Character] = None
 
     model_config = {"from_attributes": True}
 
@@ -61,6 +61,6 @@ class CharacterWhole(BaseModel):
     id: int
     name: str
     series: Optional[SeriesSimple] = None
-    character_version: List[CharacterVersionSimple] = Field(default_factory=list)
+    versions: List[CharacterVersionSimple] = Field(default_factory=list)
 
     model_config = {"from_attributes": True}
